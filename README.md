@@ -4,7 +4,9 @@ Rotating stomata measurement based on anchor-free object detection and stomatal 
 # Environmental Requirement
 Cuda version 11.3
 Python3.8
+
 Pytorch-GPU version 1.11.0.
+
 DCN V2
 
 # Train
