@@ -9,4 +9,6 @@ python test.py
 
 # demo
 python demo.py
-Description：Run the demo to get the detected stomata image.
+
+# Description
+Run the demo to get the detected stomata image.
