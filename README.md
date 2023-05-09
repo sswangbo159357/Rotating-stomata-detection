@@ -1,13 +1,19 @@
 # Rotating-stomata-detection
 Rotating stomata measurement based on anchor-free object detection and stomatal conductance calculation
 
-# train
+# Environmental Requirement
+Cuda version 11.3
+Python3.8
+Pytorch-GPU version 1.11.0.
+DCN V2
+
+# Train
 python train.py
 
-# test
+# Test
 python test.py
 
-# demo
+# Demo
 
 ![U-01-3](https://user-images.githubusercontent.com/33287682/237013693-6a689005-c98d-423e-98b5-bc337fcba68d.jpg)
 ![U-01-4](https://user-images.githubusercontent.com/33287682/237013719-04f77009-3348-4ab6-94b2-eafe31fbfd41.jpg)
