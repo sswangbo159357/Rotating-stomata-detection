@@ -4,5 +4,5 @@ Rotating stomata measurement based on anchor-free object detection and stomatal 
 # train
 python train.py
 
-#test
+# test
 python test.py
