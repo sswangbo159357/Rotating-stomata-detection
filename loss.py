@@ -54,7 +54,7 @@ class RegL1Loss(nn.Module):
     def forward(self, pred, mask, ind, target):
         pred = _transpose_and_gather_feat(pred, ind)
         mask = mask.unsqueeze(2).expand_as(pred).float()
-        loss = F.smooth_l1_loss(pred * mask, target * mask, reduction='sum')
+
         loss = loss / (mask.sum() + 1e-4)
         return loss
 
@@ -86,7 +86,6 @@ class CtdetLoss(torch.nn.Module):
         # print(pred_tensor['ang'])
         hm_loss, wh_loss, off_loss, ang_loss= 0, 0, 0, 0
         pred_tensor['hm'] = _sigmoid(pred_tensor['hm'])
-        # print(target_tensor['ang'])
         hm_loss += self.crit(pred_tensor['hm'], target_tensor['hm'])
         if ang_weight > 0:
             pred_tensor['ang'] = _relu(pred_tensor['ang'])
