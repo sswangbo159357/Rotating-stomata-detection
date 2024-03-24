@@ -254,11 +254,11 @@ class Tree(nn.Module):
             children.append(bottom)
         x1 = self.tree1(x, residual)
         if self.levels == 1:
-            x2 = self.tree2(x1)
+            x2 = self.tree1(x1)
             x = self.root(x2, x1, *children)
         else:
             children.append(x1)
-            x = self.tree2(x1, children=children)
+            x = self.tree1(x1, children=children)
         return x
 
 
@@ -525,7 +525,6 @@ def DlaNet(num_layers=34, heads={'hm': 1, 'wh': 2, 'ang': 1, 'reg': 2}, head_con
     model = Creat_DlaNet('dla{}'.format(num_layers), heads,
                          pretrained=True,
                          down_ratio=4,
-                         final_kernel=1,
                          last_level=5,
                          head_conv=head_conv,
                          plot=plot)
